@@ -2,14 +2,14 @@ import React from 'react';
 import { StyleSheet, View,Text, TextInput ,Button} from 'react-native';
 import color from './Color/color';
 import NormalCard from './Cards/normalcard';
-
+import Input from './input';
 
 const Inputbox = props => {
     return(
             <NormalCard style = {styles.card}>
              <View style = {styles.container}>
                   <Text style = {styles.text}>Enter A Number</Text>
-                  <TextInput style = {styles.textInput} />
+                  <Input style = {styles.textInput} blurOnSubmit autoCapitalize  autoCorrect = {false} keyboardType = "number-pad" maxLength = {2} />
                   <View style = {styles.buttonContainer}>
                        <View style ={styles.buttonWidth}><Button color = {color.secondary} title = "Reset"/></View>   
                       <View style ={styles.buttonWidth}><Button color = {color.primary} title = "Confirm" /></View> 
