@@ -22,7 +22,7 @@ const Inputbox = props => {
         
         
         if(isNaN(typedInput) || typedInput < 1 || typedInput > 99){
-            Alert.alert("wrong input returning......")
+            Alert.alert('Invalid Number',"wrong input returning......",[{text : "Okay",style : "destructive",onPress : resetValue}])
             return;
         }
         setConfirmed(true);
@@ -36,7 +36,7 @@ const Inputbox = props => {
         setUserInput('');
         setConfirmed(false);
      }
-      let confimation = null;
+      let confimation;
      if (isConfirmed){
         confimation =   (
             <View style={styles.container}> 
@@ -54,7 +54,7 @@ const Inputbox = props => {
                   <Input onChangeText = {userInputHandler} value = {storeUserInput}  style = {styles.textInput} blurOnSubmit autoCapitalize  autoCorrect = {false} keyboardType = "number-pad" maxLength = {2} />
                   <View style = {styles.buttonContainer}>
                        <View style ={styles.buttonWidth}><Button color = {color.secondary} onPress ={resetValue} title = "Reset"/></View>   
-                      <View style ={styles.buttonWidth}><Button color = {color.primary} onPress = {onConfirm} title = "Confirm" /></View> 
+                       <View style ={styles.buttonWidth}><Button color = {color.primary} onPress = {onConfirm} title = "Confirm" /></View> 
                  </View>
             </View>
             </NormalCard>
